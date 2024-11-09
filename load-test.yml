@@ -1,0 +1,39 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60   # Run each scenario for 60 seconds
+      arrivalRate: 5 # Simulate 5 users per second
+
+scenarios:
+  - name: Get All Posts
+    flow:
+      - get:
+          url: "/api/posts"
+
+  - name: Get Post by ID
+    flow:
+      - get:
+          url: "/api/posts/1" # Replace '1' with a valid post ID from your database
+
+  - name: Create New Post
+    flow:
+      - post:
+          url: "/api/posts"
+          json:
+            title: "Test Post"
+            content: "This is content for a test post."
+            category: "Testing"
+
+  - name: Update Post by ID
+    flow:
+      - put:
+          url: "/api/posts/1" # Replace '1' with a valid post ID
+          json:
+            title: "Updated Title"
+            content: "Updated content."
+            category: "Updated Category"
+
+  - name: Delete Post by ID
+    flow:
+      - delete:
+          url: "/api/posts/1" # Replace '1' with a valid post ID
