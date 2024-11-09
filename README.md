@@ -25,3 +25,15 @@ These metrics demonstrate the application's efficiency and scalability under loa
 - Node.js
 - MySQL
 
+### Installation
+- Clone repo
+- Install Dependencies
+- Set up MySQL server 
+- set up .env.local file with SQL server data
+
+[ DB_HOST=localhost
+  DB_USER=root
+  DB_PASSWORD=yourpassword
+  DB_NAME=yourdbname ]
+
+- run npm run dev
